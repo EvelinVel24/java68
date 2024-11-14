@@ -1,0 +1,12 @@
+<mapper namespace="com.example.client.mapper.ClientMapper">
+    <insert id="insertClient">
+        INSERT INTO cliente (id_cliente, primer_nombre, segundo_nombre, apell_paterno, apell_materno, direccion)
+        VALUES (#{id_cliente}, #{primer_nombre}, #{segundo_nombre}, #{apell_paterno}, #{apell_materno}, #{direccion})
+    </insert>
+    <select id="findAllClients" resultType="Client">
+        SELECT * FROM cliente
+    </select>
+    <select id="findClientById" parameterType="int" resultType="Client">
+        SELECT * FROM cliente WHERE id_cliente = #{id}
+    </select>
+</mapper>
